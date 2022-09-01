@@ -4,6 +4,6 @@ module edxcp.github.com.minijavafx {
 
     requires org.controlsfx.controls;
 
-    opens edxcp.github.com.minijavafx to javafx.fxml;
-    exports edxcp.github.com.minijavafx;
+    opens edxcp.github.com.minifx to javafx.fxml;
+    exports edxcp.github.com.minifx;
 }

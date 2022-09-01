@@ -1,4 +1,4 @@
-package edxcp.github.com.minijavafx;
+package edxcp.github.com.minifx;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
