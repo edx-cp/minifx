@@ -1,4 +1,4 @@
-name: Visualsearchtree CI-CD
+name: minifx CI-CD
 
 on:
   push:
@@ -23,11 +23,11 @@ jobs:
 
       - name: Run tests
         run: mvn --batch-mode --update-snapshots verify
-  CD:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Generate release
-        run: mkdir staging && cp target/*.jar staging
-        with:
-          name: Package
-          path: staging
+#  CD:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Generate release
+#        run: mkdir staging && cp target/*.jar staging
+#        with:
+#          name: Package
+#          path: staging
