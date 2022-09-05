@@ -15,7 +15,11 @@ on:
 
 jobs:
   CI:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        
     steps:
     - name: Checkout GitHub Actions
       uses: actions/checkout@v3
@@ -28,14 +32,18 @@ jobs:
         architecture: x64
         cache: maven
 
-    - name: Run tests
+    - name: Tests
       run: mvn test
       #mvn --batch-mode --update-snapshots verify
         
-    - name: Build with Maven
+    - name: Build
       run: mvn -B package --file pom.xml
   CD:
-    runs-on: ubuntu-latest
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        
     needs: CI
     steps:
     - name: Checkout GitHub Actions
