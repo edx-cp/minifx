@@ -5,6 +5,8 @@ name: minifx CI-CD
 
 on:
   push:
+    tags:
+      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
     branches:
       - dev
   pull_request:
@@ -38,19 +40,17 @@ jobs:
     steps:
     - name: Checkout GitHub Actions
       uses: actions/checkout@v3
-      
+
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
+      uses: actions/create-release@latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         body: |
-          Changes in this Release
-          - First Change
-          - Second Change
+          ${{ steps.Changelog.outputs.changelog }}
         draft: false
         prerelease: false
       
