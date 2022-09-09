@@ -7,7 +7,7 @@ class HelloTest {
 
     @Test
     void test_Case01() {
-        Assertions.assertTrue(1==1);
+        Assertions.assertTrue(1 == 1);
     }
 
     @Test
