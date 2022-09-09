@@ -14,11 +14,10 @@ on:
       - dev
 
 jobs:
-  CI:
+  Release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    needs: CI
 
     steps:
       - name: Checkout GitHub Actions
