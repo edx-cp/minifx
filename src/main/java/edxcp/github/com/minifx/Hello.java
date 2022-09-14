@@ -16,8 +16,10 @@ public class Hello extends Application {
         stage.setScene(scene);
         stage.show();
     }
-
     public static void main(String[] args) {
         launch();
     }
 }
+
+// COMMAND
+// mvn compile exec:java -Dexec.mainClass="edxcp.github.com.minifx.Hello"
