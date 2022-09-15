@@ -14,7 +14,15 @@
         <junit.version>5.8.2</junit.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -54,6 +62,12 @@
             <version>3.13.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.pschaus</groupId>
+            <artifactId>visualsearchtree</artifactId>
+            <version>v1.0.0-dev</version>
+        </dependency>
+
     </dependencies>
 
     <build>
